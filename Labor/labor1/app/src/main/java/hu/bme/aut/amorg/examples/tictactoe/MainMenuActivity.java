@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import hu.bme.aut.amorg.examples.tictactoe.model.TicTacToeModel;
+
 public class MainMenuActivity extends AppCompatActivity {
 
     @Override

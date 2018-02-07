@@ -1,10 +1,10 @@
-package hu.bme.aut.amorg.examples.tictactoe;
+package hu.bme.aut.amorg.examples.tictactoe.model;
 
 /**
  * Created by bencetoth on 2018. 02. 07..
  */
 
-class TicTacToeModel {
+public class TicTacToeModel {
     private static TicTacToeModel instance = null;
 
     private TicTacToeModel () {
