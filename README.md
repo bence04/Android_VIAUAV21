@@ -10,5 +10,10 @@ A repo-ba töltöm fel az éppen hallgatott Android tárgyra készített gyakorl
 ## Fontos linkek
 
 [Tantárgyi adatlap](https://portal.vik.bme.hu/kepzes/targyak/VIAUAV21/) <br>
+[Tárgyhonlap](https://www.aut.bme.hu/Course/android) <br>
 [Hivatalos Git repo](https://github.com/peekler/Android-BME)
+
+
+###### Kapcsolat
+Bármi felmerülő probléma esetén: toth.bence [AT] simonyi [DOT] bme [DOT] hu
 
