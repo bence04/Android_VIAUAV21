@@ -1,0 +1,113 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Subtitle"
+            android:text="Regisztráció"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:hint="Felhasználónév"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <hu.bme.aut.amorg.examples.viewlabor.view.PasswordEditText
+            android:id="@+id/registrationPET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            style="@style/Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nem"/>
+
+        <hu.bme.aut.amorg.examples.viewlabor.view.ChoiceLayout
+            android:id="@+id/firstCL"
+            app:multiple="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Férfi"/>
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nő"/>
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Egyéb"/>
+        </hu.bme.aut.amorg.examples.viewlabor.view.ChoiceLayout>
+
+        <TextView
+            style="@style/Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Válassz max 3-at"/>
+
+        <hu.bme.aut.amorg.examples.viewlabor.view.ChoiceLayout
+            android:id="@+id/secondCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:multiple="3">
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akármi1"/>
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akármi2"/>
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akármi3"/>
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akármi4"/>
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akármi5"/>
+
+            <TextView
+                style="@style/ChoiceOptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akármi6"/>
+        </hu.bme.aut.amorg.examples.viewlabor.view.ChoiceLayout>
+    </LinearLayout>
+</ScrollView>
