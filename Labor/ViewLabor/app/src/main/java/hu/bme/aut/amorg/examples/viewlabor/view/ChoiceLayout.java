@@ -5,12 +5,18 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import hu.bme.aut.amorg.examples.viewlabor.R;
 
 public class ChoiceLayout extends LinearLayout {
 
+    public static final int DIVIDER_NONE=0;
+    public static final int DIVIDER_SIMPLE=1;
+    public static final int DIVIDER_DOUBLE=2;
+    int dividerType;
     int multiple = 1;
 
     public ChoiceLayout(Context context) {
@@ -30,10 +36,12 @@ public class ChoiceLayout extends LinearLayout {
 
     protected void initLayout(Context context, AttributeSet attrs) {
         setOrientation(LinearLayout.VERTICAL);
+
         if (attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ChoiceLayout);
             try {
                 multiple = a.getInt(R.styleable.ChoiceLayout_multiple, 1);
+                dividerType = a.getInt(R.styleable.ChoiceLayout_dividerType, 0);
             } finally {
                 a.recycle();
             }
@@ -43,12 +51,18 @@ public class ChoiceLayout extends LinearLayout {
 
     @Override
     public void addView(View child) {
+        if(getChildCount() > 0) {
+            addDivider();
+        }
         super.addView(child);
         refreshAfterAdd(child);
     }
 
     @Override
     public void addView(View child, android.view.ViewGroup.LayoutParams params) {
+        if(getChildCount() > 0) {
+            addDivider();
+        }
         super.addView(child, params);
         refreshAfterAdd(child);
     }
@@ -85,4 +99,20 @@ public class ChoiceLayout extends LinearLayout {
             }
         }
     };
+
+    public void addDivider() {
+        if(dividerType != DIVIDER_NONE) {
+            ImageView div = new ImageView(getContext());
+            switch (dividerType) {
+                case DIVIDER_SIMPLE:
+                    div.setImageResource(R.drawable.choice_divider_simple);
+                    break;
+                case DIVIDER_DOUBLE:
+                    div.setImageResource(R.drawable.choice_divider_double);
+                    break;
+            }
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            super.addView(div, lp);
+        }
+    }
 }

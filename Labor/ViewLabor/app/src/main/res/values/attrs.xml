@@ -2,5 +2,14 @@
 <resources>
     <declare-styleable name="ChoiceLayout">
         <attr name="multiple" format="integer" />
+
+        <attr name="dividerType" format="enum">
+            <enum name="none" value="0" />
+            <enum name="simple_divider" value="1" />
+            <enum name="double_divider" value="2" />
+        </attr>
+
     </declare-styleable>
+
+
 </resources>

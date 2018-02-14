@@ -40,7 +40,8 @@
             android:id="@+id/firstCL"
             app:multiple="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:dividerType="simple_divider">
 
             <TextView
                 style="@style/ChoiceOptionStyle"
@@ -71,7 +72,8 @@
             android:id="@+id/secondCL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:multiple="3">
+            app:multiple="3"
+            app:dividerType="double_divider">
 
             <TextView
                 style="@style/ChoiceOptionStyle"
