@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import hu.bme.aut.amorg.examples.todo.adapter.SimpleItemRecyclerViewAdapter;
@@ -124,8 +125,18 @@ public class TodoListActivity extends AppCompatActivity implements TodoCreateFra
             TodoCreateFragment createFragment = new TodoCreateFragment();
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             createFragment.show(fm, TodoCreateFragment.TAG);
+        } else if(item.getItemId() == R.id.deleteAllItem) {
+            this.deleteAllItems();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void deleteAllItems() {
+        Cursor result = dbLoader.fetchAll();
+        while (result.moveToNext()) {
+            dbLoader.deleteTodo(Integer.parseInt(result.getString(0)));
+        }
+        refreshList();
     }
 
     @Override
